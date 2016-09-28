@@ -1,77 +1,31 @@
 
 <title>Tables - Ace Admin</title>
-<h3 class="header smaller lighter blue">修改信息销售员信息</h3>
-		<div class="row">
-	<div class="col-xs-12">
-		<!-- PAGE CONTENT BEGINS -->
-		<div class="row">
-			<div class="col-xs-12">
-				<table id="simple-table" class="table table-striped table-bordered table-hover">
-					<thead>
-						<tr>
-							<th>姓名</th>
-							<th>性别</th>
-							<th class="hidden-480">手机号</th>
-							<th>
-								区域
-							</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<tr>
-
-							<td>
-								王五
-							</td>
-							<td>男</td>
-							<td class="hidden-480">12345678901</td>
-							<td>陕西</td>
-						</tr>
-					</tbody>
-				</table>
-			</div><!-- /.span -->
-		</div><!-- /.row -->
-
-		<!-- PAGE CONTENT ENDS -->
-	</div><!-- /.col -->
-</div><!-- /.row -->
-
-<h3 class="header smaller lighter blue">修改信息</h3>
+<h3 class="header smaller lighter blue">可提取额度(人民币)：10000</h3>
 <div class="row">
 	<div class="col-xs-12">
 		<!-- PAGE CONTENT BEGINS -->
 		<form class="form-horizontal" role="form" id="validation-form">
 			<!-- #section:elements.form -->
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right"  for="name">姓名</label>
+				<label class="col-sm-3 control-label no-padding-right"  for="money">提款金额</label>
 
 				<div class="col-sm-9">
 					<div class="clearfix">
-						<input type="text" id="name" name="name" placeholder="姓名" class="col-xs-10 col-sm-5" />
+						<input type="number" id="money" name="money" placeholder="提款金额" class="col-xs-10 col-sm-5" />
 					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="gender">性别</label>
-
-				<div class="col-sm-9">
-					<div class="clearfix">
-					<input type="text" id="name" name="gender" placeholder="性别" class="col-xs-10 col-sm-5" />
-				</div>
 				</div>
 			</div>
 			<div class="clearfix form-actions">
 				<div class="col-md-offset-3 col-md-9">
 					<button class="btn btn-info" type="submit">
 						<i class="ace-icon fa fa-check bigger-110"></i>
-						修改
+						Submit
 					</button>
 
 					&nbsp; &nbsp; &nbsp;
 					<button class="btn" type="reset">
 						<i class="ace-icon fa fa-undo bigger-110"></i>
-						重置
+						Reset
 					</button>
 				</div>
 			</div>
@@ -82,7 +36,7 @@
 </div><!-- /.row -->
 <!-- page specific plugin scripts -->
 <script type="text/javascript">
-	var scripts = [null,"../../assets/js/dataTables/jquery.dataTables.js","../../assets/js/dataTables/jquery.dataTables.bootstrap.js","../../assets/js/dataTables/extensions/TableTools/js/dataTables.tableTools.js","../../assets/js/dataTables/extensions/ColVis/js/dataTables.colVis.js","../../assets/js/fuelux/fuelux.wizard.js","../../assets/js/jquery.validate.js","../../assets/js/additional-methods.js","../../assets/js/bootbox.js","../../assets/js/jquery.maskedinput.js","../../assets/js/select2.js", null]
+	var scripts = [null,"../../assets/js/fuelux/fuelux.wizard.js","../../assets/js/jquery.validate.js","../../assets/js/additional-methods.js","../../assets/js/bootbox.js","../../assets/js/jquery.maskedinput.js","../../assets/js/select2.js","../../assets/js/prettify.js", null]
 	$('.page-content-area').ace_ajax('loadScripts', scripts, function () {
 		
 
@@ -93,17 +47,12 @@
 				focusInvalid: false,
 				ignore: "",
 				rules: {
-					name: {
-						required: true
-					},
-					gender: {
+					money: {
 						required: true
 					}
 				},
-		
 				messages: {
-					name: "此处不可为空",
-					gender: "此处不可为空"
+					money: "此处不可为空"
 				},
 		
 		
