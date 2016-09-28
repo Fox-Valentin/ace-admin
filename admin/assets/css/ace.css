@@ -6,7 +6,7 @@ body {
   background-color: #e4e6e9;
   min-height: 100%;
   padding-bottom: 0;
-  font-family: 'Open Sans';
+  font-family: 'Microsoft-YaHei','Open Sans';
   font-size: 13px;
   color: #393939;
   line-height: 1.5;
@@ -121,7 +121,7 @@ a:active {
 h1 {
   font-size: 32px;
   font-weight: normal;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family:'Microsoft-YaHei', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 h1.smaller {
   font-size: 31px;
@@ -135,7 +135,7 @@ h1.block {
 h2 {
   font-size: 26px;
   font-weight: normal;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family:'Microsoft-YaHei', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 h2.smaller {
   font-size: 25px;
@@ -149,7 +149,7 @@ h2.block {
 h3 {
   font-size: 22px;
   font-weight: normal;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family:'Microsoft-YaHei', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 h3.smaller {
   font-size: 21px;
@@ -163,7 +163,7 @@ h3.block {
 h4 {
   font-size: 18px;
   font-weight: normal;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family:'Microsoft-YaHei', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 h4.smaller {
   font-size: 17px;
@@ -191,7 +191,7 @@ h5.block {
 h6 {
   font-size: 13px;
   font-weight: normal;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family:'Microsoft-YaHei', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 h6.smaller {
   font-size: 12px;
@@ -9131,7 +9131,7 @@ input[type=checkbox].ace.ace-switch + .lbl {
   min-height: 24px;
 }
 input[type=checkbox].ace.ace-switch + .lbl::before {
-  font-family: 'Open Sans';
+  font-family:'Microsoft-YaHei', 'Open Sans';
   content: "ON\a0\a0\a0\a0\a0\a0\a0\a0\a0OFF";
   color: #999;
   text-shadow: 0 0 0 #999;
@@ -9157,7 +9157,7 @@ input[type=checkbox].ace.ace-switch + .lbl::before {
   top: auto;
 }
 input[type=checkbox].ace.ace-switch + .lbl::after {
-  font-family: 'Open Sans';
+  font-family:'Microsoft-YaHei', 'Open Sans';
   content: 'III';
   font-size: 12px;
   font-weight: normal;
@@ -12513,7 +12513,6 @@ td .lbl:only-child {
 .login-layout .widget-box .widget-body .toolbar > div > a {
   font-size: 15px;
   font-weight: 400;
-  text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.25);
 }
 .login-box .forgot-password-link {
   color: #FE9;
@@ -13315,7 +13314,7 @@ li.item-default {
   line-height: 26px;
   font-size: 13px;
   font-weight: bold;
-  font-family: "Open Sans";
+  font-family:'Microsoft-YaHei', "Open Sans";
   padding: 0 8px;
 }
 .profile-users .user {

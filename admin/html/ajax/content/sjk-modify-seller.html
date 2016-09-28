@@ -1,7 +1,37 @@
 
 <title>Tables - Ace Admin</title>
 <h3 class="header smaller lighter blue">修改信息销售员信息</h3>
-		<div class="row">
+<div class="row">
+	<div class="col-xs-12">
+		<div class="widget-box">
+			<div class="widget-header widget-header-flat">
+				<h4 class="widget-title smaller">说明</h4>
+			</div>
+
+			<div class="widget-body">
+				<div class="widget-main">
+					<code class="pull-right" id="dt-list-code">仅用于说明,阅后删除</code>
+
+					<dl id="dt-list-1">
+						<dt>表格</dt>
+						<dd>
+							展示销售员信息
+						</dd>
+						<div class="space-6"></div>
+						<dt>修改信息表单</dt>
+						<dd>
+							用于修改销售员信息，仅允许修改姓名和性别
+						</dd>
+						<dd>
+							表单加入验证规则，姓名和性别不得为空
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
 	<div class="col-xs-12">
 		<!-- PAGE CONTENT BEGINS -->
 		<div class="row">
@@ -53,13 +83,22 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="gender">性别</label>
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right">性别</label>
+					<div class="col-xs-12 col-sm-9">
+						<div>
+							<label class="line-height-1 blue">
+								<input name="gender" value="1" type="radio" class="ace" />
+								<span class="lbl"> 男</span>
+							</label>
+						</div>
 
-				<div class="col-sm-9">
-					<div class="clearfix">
-					<input type="text" id="name" name="gender" placeholder="性别" class="col-xs-10 col-sm-5" />
-				</div>
-				</div>
+						<div>
+							<label class="line-height-1 blue">
+								<input name="gender" value="2" type="radio" class="ace" />
+								<span class="lbl"> 女</span>
+							</label>
+						</div>
+					</div>
 			</div>
 			<div class="clearfix form-actions">
 				<div class="col-md-offset-3 col-md-9">
@@ -103,7 +142,7 @@
 		
 				messages: {
 					name: "此处不可为空",
-					gender: "此处不可为空"
+					gender: "必须选择一个"
 				},
 		
 		

@@ -3,6 +3,32 @@
 <h3 class="header smaller lighter blue">销售项目登记</h3>
 <div class="row">
 	<div class="col-xs-12">
+		<div class="widget-box">
+			<div class="widget-header widget-header-flat">
+				<h4 class="widget-title smaller">说明</h4>
+			</div>
+
+			<div class="widget-body">
+				<div class="widget-main">
+					<code class="pull-right" id="dt-list-code">仅用于说明,阅后删除</code>
+
+					<dl id="dt-list-1">
+						<dt>销售项目登记表单</dt>
+						<dd>
+							需要填入姓名、手机号码、和项目
+						</dd>
+						<dd>
+							添加非空验证
+						</dd>
+						<div class="space-6"></div>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
 		<!-- PAGE CONTENT BEGINS -->
 		<form class="form-horizontal" role="form" id="validation-form">
 			<!-- #section:elements.form -->
@@ -97,7 +123,7 @@
 					}
 				},
 				messages: {
-					money: "此处不可为空",
+					name: "此处不可为空",
 					phone: "手机号码错误",
 					program: "至少选择一项"
 				},
