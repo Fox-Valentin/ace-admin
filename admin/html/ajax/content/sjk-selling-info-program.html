@@ -1,0 +1,309 @@
+
+<title>Treeview - Ace Admin</title>
+
+<!-- ajax layout which only needs content area -->
+<div class="page-header">
+	<h1>
+		销售信息图
+		<small>
+			<i class="ace-icon fa fa-angle-double-right"></i>
+			销售项目开拓图
+		</small>
+	</h1>
+</div><!-- /.page-header -->
+
+<div class="row">
+	<div class="col-xs-12">
+		<!-- PAGE CONTENT BEGINS -->
+
+		<!-- #section:plugins/fuelux.treeview -->
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="widget-box widget-color-blue2">
+					<div class="widget-header">
+						<h4 class="widget-title lighter smaller">销售项目开拓图</h4>
+					</div>
+
+					<div class="widget-body">
+						<div class="widget-main padding-8">
+							<ul id="tree1"></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- /section:plugins/fuelux.treeview -->
+		<script type="text/javascript">
+			var $assets = "../../assets";//this will be used in fuelux.tree-sampledata.js
+		</script>
+
+		<!-- PAGE CONTENT ENDS -->
+	</div><!-- /.col -->
+</div><!-- /.row -->
+
+<!-- page specific plugin scripts -->
+<script type="text/javascript">
+	var scripts = [null,"../../assets/js/fuelux/fuelux.tree.js", null]
+	$('.page-content-area').ace_ajax('loadScripts', scripts, function() {
+	  //inline scripts related to this page
+		 jQuery(function($){
+	var sampleData = initiateDemoData();//see below
+
+
+	$('#tree1').ace_tree({
+		dataSource: sampleData['dataSource1'],
+		multiSelect: true,
+		cacheItems: true,
+		'open-icon' : 'ace-icon tree-minus',
+		'close-icon' : 'ace-icon tree-plus',
+		'selectable' : true,
+		'selected-icon' : 'ace-icon fa fa-check',
+		'unselected-icon' : 'ace-icon fa fa-times',
+		loadingHTML : '<div class="tree-loading"><i class="ace-icon fa fa-refresh fa-spin blue"></i></div>'
+	});
+	
+	/**
+	//please refer to docs for more info
+	$('#tree1')
+	.on('loaded.fu.tree', function(e) {
+	})
+	.on('updated.fu.tree', function(e, result) {
+	})
+	.on('selected.fu.tree', function(e) {
+	})
+	.on('deselected.fu.tree', function(e) {
+	})
+	.on('opened.fu.tree', function(e) {
+	})
+	.on('closed.fu.tree', function(e) {
+	});
+	*/
+	
+	
+	function initiateDemoData(){
+		var tree_data = {
+			'no1' : {text: '甲', type: 'folder'},
+		}
+		tree_data['no1']['additionalParameters'] = {
+			'children' : {
+				'no2-1' : {text: '乙1', type: 'folder'},
+				'no2-2' : {text: '乙2', type: 'folder'}
+			}
+		}
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters'] = {
+			'children' : {
+				'no3-1' : {text: '丙1', type: 'folder'},
+				'no3-2' : {text: '丙2', type: 'folder'}
+			}
+		}
+		tree_data['no1']['additionalParameters']['children']['no2-2']['additionalParameters'] = {
+			'children' : {
+				'no3-3' : {text: '丙3', type: 'folder'},
+				'no3-4' : {text: '丙4', type: 'folder'}
+			}
+		}
+
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters']['children']['no3-1']['additionalParameters'] = {
+			'children' : {
+				'no4-1' : {text: '戊1', type: 'folder'},
+				'no4-2' : {text: '戊2', type: 'folder'}
+			}
+		}
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters']['children']['no3-2']['additionalParameters'] = {
+			'children' : {
+				'no4-3' : {text: '戊3', type: 'folder'},
+				'no4-4' : {text: '戊4', type: 'folder'}
+			}
+		}
+		tree_data['no1']['additionalParameters']['children']['no2-2']['additionalParameters']['children']['no3-3']['additionalParameters'] = {
+			'children' : {
+				'no4-5' : {text: '戊5', type: 'folder'},
+				'no4-6' : {text: '戊6', type: 'folder'}
+			}
+		}
+		tree_data['no1']['additionalParameters']['children']['no2-2']['additionalParameters']['children']['no3-4']['additionalParameters'] = {
+			'children' : {
+				'no4-7' : {text: '戊7', type: 'folder'},
+				'no4-8' : {text: '戊8', type: 'folder'}
+			}
+		}
+
+
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters']['children']['no3-1']['additionalParameters']['children']['no4-1']['additionalParameters'] = {
+			'children' : {
+				'no5-1' : {text: '己1', type: 'folder'},
+				'no5-2' : {text: '己2', type: 'folder'}
+			}
+		}
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters']['children']['no3-1']['additionalParameters']['children']['no4-2']['additionalParameters'] = {
+			'children' : {
+				'no5-3' : {text: '己3', type: 'folder'},
+				'no5-4' : {text: '己4', type: 'folder'}
+			}
+		}
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters']['children']['no3-2']['additionalParameters']['children']['no4-3']['additionalParameters'] = {
+			'children' : {
+				'no5-5' : {text: '己5', type: 'folder'},
+				'no5-6' : {text: '己6', type: 'folder'}
+			}
+		}
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters']['children']['no3-2']['additionalParameters']['children']['no4-4']['additionalParameters'] = {
+			'children' : {
+				'no5-7' : {text: '己7', type: 'folder'},
+				'no5-8' : {text: '己8', type: 'folder'}
+			}
+		}
+
+		tree_data['no1']['additionalParameters']['children']['no2-2']['additionalParameters']['children']['no3-3']['additionalParameters']['children']['no4-5']['additionalParameters'] = {
+			'children' : {
+				'no5-9' : {text: '己9', type: 'folder'},
+				'no5-10' : {text: '己10', type: 'folder'}
+			}
+		}
+		tree_data['no1']['additionalParameters']['children']['no2-2']['additionalParameters']['children']['no3-3']['additionalParameters']['children']['no4-6']['additionalParameters'] = {
+			'children' : {
+				'no5-11' : {text: '己11', type: 'folder'},
+				'no5-12' : {text: '己12', type: 'folder'}
+			}
+		}
+		tree_data['no1']['additionalParameters']['children']['no2-2']['additionalParameters']['children']['no3-4']['additionalParameters']['children']['no4-7']['additionalParameters'] = {
+			'children' : {
+				'no5-13' : {text: '己13', type: 'folder'},
+				'no5-14' : {text: '己14', type: 'folder'}
+			}
+		}
+		tree_data['no1']['additionalParameters']['children']['no2-2']['additionalParameters']['children']['no3-4']['additionalParameters']['children']['no4-8']['additionalParameters'] = {
+			'children' : {
+				'no5-15' : {text: '己15', type: 'folder'},
+				'no5-16' : {text: '己16', type: 'folder'}
+			}
+		}
+
+		// 庚
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters']['children']['no3-1']['additionalParameters']['children']['no4-1']['additionalParameters']['children']['no5-1']['additionalParameters'] = {
+			'children' : {
+				'no6-1' : {text: '庚1', type: 'folder'},
+				'no6-2' : {text: '庚2', type: 'folder'}
+			}
+		}
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters']['children']['no3-1']['additionalParameters']['children']['no4-1']['additionalParameters']['children']['no5-2']['additionalParameters'] = {
+			'children' : {
+				'no6-3' : {text: '庚3', type: 'folder'},
+				'no6-4' : {text: '庚4', type: 'folder'}
+			}
+		}
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters']['children']['no3-1']['additionalParameters']['children']['no4-2']['additionalParameters']['children']['no5-3']['additionalParameters'] = {
+			'children' : {
+				'no6-11' : {text: '庚5', type: 'folder'},
+				'no6-12' : {text: '庚6', type: 'folder'}
+			}
+		}
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters']['children']['no3-1']['additionalParameters']['children']['no4-2']['additionalParameters']['children']['no5-4']['additionalParameters'] = {
+			'children' : {
+				'no6-15' : {text: '庚7', type: 'folder'},
+				'no6-16' : {text: '庚8', type: 'folder'}
+			}
+		}
+
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters']['children']['no3-2']['additionalParameters']['children']['no4-3']['additionalParameters']['children']['no5-5']['additionalParameters'] = {
+			'children' : {
+				'no6-19' : {text: '庚9', type: 'folder'},
+				'no6-20' : {text: '庚10', type: 'folder'}
+			}
+		}
+
+
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters']['children']['no3-2']['additionalParameters']['children']['no4-3']['additionalParameters']['children']['no5-6']['additionalParameters'] = {
+			'children' : {
+				'no6-23' : {text: '庚11', type: 'folder'},
+				'no6-24' : {text: '庚12', type: 'folder'}
+			}
+		}
+
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters']['children']['no3-2']['additionalParameters']['children']['no4-4']['additionalParameters']['children']['no5-7']['additionalParameters'] = {
+			'children' : {
+				'no6-27' : {text: '庚13', type: 'folder'},
+				'no6-28' : {text: '庚14', type: 'folder'}
+			}
+		}
+
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters']['children']['no3-2']['additionalParameters']['children']['no4-4']['additionalParameters']['children']['no5-8']['additionalParameters'] = {
+			'children' : {
+				'no6-31' : {text: '庚15', type: 'folder'},
+				'no6-32' : {text: '庚16', type: 'folder'}
+			}
+		}
+
+		// 庚乙2
+		tree_data['no1']['additionalParameters']['children']['no2-2']['additionalParameters']['children']['no3-3']['additionalParameters']['children']['no4-5']['additionalParameters']['children']['no5-9']['additionalParameters'] = {
+			'children' : {
+				'no6-33' : {text: '庚17', type: 'folder'},
+				'no6-34' : {text: '庚18', type: 'folder'}
+			}
+		}
+		tree_data['no1']['additionalParameters']['children']['no2-2']['additionalParameters']['children']['no3-3']['additionalParameters']['children']['no4-5']['additionalParameters']['children']['no5-10']['additionalParameters'] = {
+			'children' : {
+				'no6-35' : {text: '庚19', type: 'folder'},
+				'no6-36' : {text: '庚20', type: 'folder'}
+			}
+		}
+
+		tree_data['no1']['additionalParameters']['children']['no2-2']['additionalParameters']['children']['no3-3']['additionalParameters']['children']['no4-6']['additionalParameters']['children']['no5-11']['additionalParameters'] = {
+			'children' : {
+				'no6-37' : {text: '庚21', type: 'folder'},
+				'no6-38' : {text: '庚22', type: 'folder'}
+			}
+		}
+		tree_data['no1']['additionalParameters']['children']['no2-2']['additionalParameters']['children']['no3-3']['additionalParameters']['children']['no4-6']['additionalParameters']['children']['no5-12']['additionalParameters'] = {
+			'children' : {
+				'no6-39' : {text: '庚23', type: 'folder'},
+				'no6-40' : {text: '庚24', type: 'folder'}
+			}
+		}
+
+		console.log(tree_data)
+
+		// 辛
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters']['children']['no3-1']['additionalParameters']['children']['no4-1']['additionalParameters']['children']['no5-1']['additionalParameters']['children']['no6-1']['additionalParameters'] = {
+			'children' : {
+				'no7-1' : {text: '辛1', type: 'folder'},
+				'no7-2' : {text: '辛2', type: 'folder'}
+			}
+		}
+
+		// 壬
+		tree_data['no1']['additionalParameters']['children']['no2-1']['additionalParameters']['children']['no3-1']['additionalParameters']['children']['no4-1']['additionalParameters']['children']['no5-1']['additionalParameters']['children']['no6-1']['additionalParameters']['children']['no7-1']['additionalParameters'] = {
+			'children' : {
+				'no8-1' : {text: '壬1', type: 'folder'},
+				'no8-2' : {text: '壬2', type: 'folder'}
+			}
+		}
+
+		var dataSource1 = function(options, callback){
+			var $data = null
+			if(!("text" in options) && !("type" in options)){
+				$data = tree_data;//the root tree
+				callback({ data: $data });
+				return;
+			}
+			else if("type" in options && options.type == "folder") {
+				if("additionalParameters" in options && "children" in options.additionalParameters)
+					$data = options.additionalParameters.children || {};
+				else $data = {}//no data
+			}
+			
+			if($data != null)//this setTimeout is only for mimicking some random delay
+				setTimeout(function(){callback({ data: $data });} , parseInt(Math.random() * 500) + 200);
+
+			//we have used static data here
+			//but you can retrieve your data dynamically from a server using ajax call
+			//checkout examples/treeview.html and examples/treeview.js for more info
+		}
+		
+		return {'dataSource1': dataSource1}
+	}
+
+});
+	});
+</script>

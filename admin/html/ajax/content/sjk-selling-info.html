@@ -1,0 +1,138 @@
+
+<title>Tables - Ace Admin</title>
+<h3 class="header smaller lighter blue">销售项目登记</h3>
+<div class="row">
+	<div class="col-xs-12">
+		<!-- PAGE CONTENT BEGINS -->
+		<form class="form-horizontal" role="form" id="validation-form">
+			<!-- #section:elements.form -->
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right"  for="name">顾客姓名:</label>
+
+				<div class="col-sm-9">
+					<div class="clearfix">
+						<input type="number" id="name" name="name" placeholder="顾客姓名" class="col-xs-10 col-sm-5" />
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right"  for="phone">手机号码:</label>
+
+				<div class="col-sm-9">
+					<div class="clearfix">
+						<input type="number" id="phone" name="phone" placeholder="手机号码" class="col-xs-10 col-sm-5" />
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right">销售项目:</label>
+
+				<div class="col-xs-12 col-sm-9">
+					<div>
+						<label>
+							<input name="program" value="1" type="checkbox" class="ace" />
+							<span class="lbl">金屋顶</span>
+						</label>
+					</div>
+
+					<div>
+						<label>
+							<input name="program" value="2" type="checkbox" class="ace" />
+							<span class="lbl">银屋顶</span>
+						</label>
+					</div>
+					<div>
+						<label>
+							<input name="program" value="3" type="checkbox" class="ace" />
+							<span class="lbl">铜屋顶</span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix form-actions">
+				<div class="col-md-offset-3 col-md-9">
+					<button class="btn btn-info" type="submit">
+						<i class="ace-icon fa fa-check bigger-110"></i>
+						提交
+					</button>
+
+					&nbsp; &nbsp; &nbsp;
+					<button class="btn" type="reset">
+						<i class="ace-icon fa fa-undo bigger-110"></i>
+						重置
+					</button>
+				</div>
+			</div>
+		</form>
+
+		<!-- PAGE CONTENT ENDS -->
+	</div><!-- /.col -->
+</div><!-- /.row -->
+<!-- page specific plugin scripts -->
+<script type="text/javascript">
+	var scripts = [null,"../../assets/js/fuelux/fuelux.wizard.js","../../assets/js/jquery.validate.js","../../assets/js/additional-methods.js","../../assets/js/bootbox.js","../../assets/js/jquery.maskedinput.js","../../assets/js/select2.js","../../assets/js/prettify.js", null];
+	$('.page-content-area').ace_ajax('loadScripts', scripts, function () {
+		
+
+		 jQuery(function($) {
+		 	jQuery.validator.addMethod("phone", function (value, element) {
+				return this.optional(element) || /^\(\d{3}\) \d{3}\-\d{4}( x\d{1,6})?$/.test(value);
+			}, "手机号码错误");
+
+			$('#validation-form').validate({
+				errorElement: 'div',
+				errorClass: 'help-block',
+				focusInvalid: false,
+				ignore: "",
+				rules: {
+					name: {
+						required: true
+					},
+					phone: {
+						required: true,
+						phone: 'required'
+					},
+					program:{
+						required: true
+					}
+				},
+				messages: {
+					money: "此处不可为空",
+					phone: "手机号码错误",
+					program: "至少选择一项"
+				},
+		
+		
+				highlight: function (e) {
+					$(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+				},
+		
+				success: function (e) {
+					$(e).closest('.form-group').removeClass('has-error');//.addClass('has-info');
+					$(e).remove();
+				},
+		
+				errorPlacement: function (error, element) {
+					if(element.is('input[type=checkbox]') || element.is('input[type=radio]')) {
+						var controls = element.closest('div[class*="col-"]');
+						if(controls.find(':checkbox,:radio').length > 1) controls.append(error);
+						else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+					}
+					else if(element.is('.select2')) {
+						error.insertAfter(element.siblings('[class*="select2-container"]:eq(0)'));
+					}
+					else if(element.is('.chosen-select')) {
+						error.insertAfter(element.siblings('[class*="chosen-container"]:eq(0)'));
+					}
+					else error.insertAfter(element.parent());
+				},
+		
+				submitHandler: function (form) {
+				},
+				invalidHandler: function (form) {
+				}
+			});
+
+		})
+	});
+</script>
